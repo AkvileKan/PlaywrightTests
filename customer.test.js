@@ -10,7 +10,7 @@ test.describe.only("Customer tests", async () => {
     await page.getByText("Engels").click();
 
     let usernameLocator = page.locator("#email");
-    await usernameLocator.fill("akvile.matuk@gmail.com");
+    await usernameLocator.fill("xxx123@gmail.com");
     let paswordLocator = page.locator("#password");
     await paswordLocator.fill("Test12345");
     let signInButton = page.getByText("Log in");
@@ -22,7 +22,7 @@ test.describe.only("Customer tests", async () => {
       .getByRole("dialog")
       .filter({ hasText: "Create a new customer" });
 
-    await createCustomerDrawer.locator("#email").fill("akvile.matuk@gmail.com");
+    await createCustomerDrawer.locator("#email").fill("xxx123@gmail.com");
     await createCustomerDrawer.locator("#name").fill("Petras Petrauskas");
 
     await createCustomerDrawer.locator("#dateOfBirth").fill("10-08-1995");
@@ -66,7 +66,7 @@ test.describe.only("Customer tests", async () => {
       "+3169098765"
     );
     await expect(editCustomerDrawer.locator("#address")).toHaveValue(
-      "Lubinų g. 284-2"
+      "testStreet g. 284-2"
     );
     await expect(editCustomerDrawer.locator("#city")).toHaveValue("Kaunas");
     await expect(editCustomerDrawer.locator("#zipcode")).toHaveValue(
@@ -80,7 +80,7 @@ test.describe.only("Customer tests", async () => {
     await page.getByText("Taal").click();
     await page.getByText("Engels").click();
     let usernameLocator = page.locator("#email");
-    await usernameLocator.fill("akvile.matuk@gmail.com");
+    await usernameLocator.fill("xxx123@gmail.com");
     let paswordLocator = page.locator("#password");
     await paswordLocator.fill("Test12345");
     let signInButton = page.getByText("Log in");
@@ -93,7 +93,7 @@ test.describe.only("Customer tests", async () => {
     let editCustomerDrawer = page
       .getByRole("dialog")
       .filter({ hasText: "Edit customer" });
-    await editCustomerDrawer.locator("#email").fill("elivka@hotmail.com");
+    await editCustomerDrawer.locator("#email").fill("xxx123@gmail.com");
     await editCustomerDrawer.locator("#name").fill("Adas Jankauskas");
     await editCustomerDrawer.locator("#gender").click();
     await page.getByText("Male").nth(1).click();
@@ -103,7 +103,7 @@ test.describe.only("Customer tests", async () => {
     await editCustomerDrawer.locator("#address").fill("Lašo g. 286-2");
     await editCustomerDrawer.locator("#city").fill("Anykščiai");
     await editCustomerDrawer.locator("#zipcode").fill("LT-27000");
-    await editCustomerDrawer.locator("#notes").fill("daug algos gauna");
+    await editCustomerDrawer.locator("#notes").fill("TESTtestTEST");
     await editCustomerDrawer.getByText("Save").click();
 
     let editCustomerDrawer1 = page
@@ -111,7 +111,7 @@ test.describe.only("Customer tests", async () => {
       .filter({ hasText: "Edit customer" });
 
     await expect(editCustomerDrawer1.locator("#email")).toHaveValue(
-      "elivka@hotmail.com"
+      "xxx123@gmail.com"
     );
     await expect(editCustomerDrawer1.locator("#name")).toHaveValue(
       "Adas Jankauskas"
@@ -138,7 +138,7 @@ test.describe.only("Customer tests", async () => {
       "LT-27000"
     );
     await expect(editCustomerDrawer.locator("#notes")).toHaveValue(
-      "daug algos gauna"
+      "TESTtestTESt"
     );
   });
 
@@ -147,7 +147,7 @@ test.describe.only("Customer tests", async () => {
     await page.getByText("Taal").click();
     await page.getByText("Engels").click();
     let usernameLocator = page.locator("#email");
-    await usernameLocator.fill("akvile.matuk@gmail.com");
+    await usernameLocator.fill("xxx123@gmail.com");
     let paswordLocator = page.locator("#password");
     await paswordLocator.fill("Test12345");
     let signInButton = page.getByText("Log in");
@@ -175,7 +175,7 @@ test.describe.only("Customer tests", async () => {
     await page.getByText("Taal").click();
     await page.getByText("Engels").click();
     let usernameLocator = page.locator("#email");
-    await usernameLocator.fill("akvile.matuk@gmail.com");
+    await usernameLocator.fill("xxx123@gmail.com");
     let paswordLocator = page.locator("#password");
     await paswordLocator.fill("Test12345");
     let signInButton = page.getByText("Log in");
@@ -195,13 +195,13 @@ test.skip("fill customer questionaire", async ({ page }) => {
   await page.getByText("Taal").click();
   await page.getByText("Engels").click();
   let usernameLocator = page.locator("#email");
-  await usernameLocator.fill("akvile.matuk@gmail.com");
+  await usernameLocator.fill("xxx123@gmail.com");
   let paswordLocator = page.locator("#password");
   await paswordLocator.fill("Test12345");
   let signInButton = page.getByText("Log in");
   await signInButton.click();
   await page.getByText("Customers").first().click();
-  await page.getByText("Akvilė Matukaitytė").first().click();
+  await page.getByText("Dora Test").first().click();
   await page.getByText("Fill questionnaire now").first().click();
   await page.getByText("Simple questionnaire").click();
   let textLocator = page.locator(".ant-input");
@@ -223,7 +223,7 @@ test.skip("Buying courses", async ({ page }) => {
   await page.goto("https://test-app.re-sence.com/akvile-e2e/admin/login");
   await page.getByText("Taal").click();
   await page.getByText("Engels").click();
-  await page.locator("#email").fill("akvile.matuk@gmail.com");
+  await page.locator("#email").fill("xxx123@gmail.com");
   await page.locator("#password").fill("Test12345");
   await page.getByText("Log in").click();
   await page.getByText("Academy").click();
